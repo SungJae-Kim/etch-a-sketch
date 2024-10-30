@@ -1,17 +1,13 @@
-
-
 main = document.querySelector(".flex-container");
 
 for (let i = 0; i < 16; i++) {
-    let containerNum = "";
-    if (i == 0 || (i + 1) % 4 == 0) {
-        container = document.createElement("div");
-        container.setAttribute("id", "box" + i);
-        main.appendChild(container);
+    row = document.createElement("div");
+    for (let j = 0; j < 16; j++) {
+        col = document.createElement("div");
+        col.classList.add("box");
+        col.textContent = "test";
+        row.appendChild(col);
     }
-    const box = document.createElement("div");
-    box.textContent = i + 1;
-    box.classList.add("box");
-    container.appendChild(box);
+    main.appendChild(row);
 }
 
