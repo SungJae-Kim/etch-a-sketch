@@ -1,14 +1,17 @@
 
 
-body = document.querySelector("body");
+main = document.querySelector(".flex-container");
 
 for (let i = 0; i < 16; i++) {
-    i = document.createElement("div");
-    let lineid = ""
-    lineid += i;
-    body.appendchild()
-    for (let j = 0; j < 16; j++) {
-        j = document.createElement("span");
-        i.appendChild(j);
+    let containerNum = "";
+    if (i == 0 || (i + 1) % 4 == 0) {
+        container = document.createElement("div");
+        container.setAttribute("id", "box" + i);
+        main.appendChild(container);
     }
+    const box = document.createElement("div");
+    box.textContent = i + 1;
+    box.classList.add("box");
+    container.appendChild(box);
 }
+
