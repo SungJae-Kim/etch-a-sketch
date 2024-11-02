@@ -10,7 +10,15 @@
     
     <div class="flex-container">
     </div>
-
+    <div id="button-container">
+        <input 
+            type="text" 
+            placeholder="size of board"
+            value="16"
+            onchange="makegrid(this.value)"
+        />
+        <button>Change Size</button>
+    </div>
     <script src="etch.js"></script>
 </body>
 </html>
