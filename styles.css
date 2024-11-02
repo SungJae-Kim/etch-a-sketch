@@ -2,14 +2,15 @@
     width: 720px;
     height: 720px;
     display: flex;
-    justify-content:space-evenly;
+    flex-wrap: wrap;
     
 }
 
 .box {
-    width:45px;
-    height:45px;
     border-style: solid;
     flex-wrap: wrap;
-    flex: auto;
+    margin: 0px;
+    padding: 0px;
+    border: 1px;
+    
 }

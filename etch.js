@@ -1,13 +1,19 @@
-main = document.querySelector(".flex-container");
+const main = document.querySelector(".flex-container");
+const gridSize = 16;
+const gridArea = gridSize * gridSize;
+const boxSize = (700 / gridSize).toString() + "px";
 
-for (let i = 0; i < 16; i++) {
-    row = document.createElement("div");
-    for (let j = 0; j < 16; j++) {
-        col = document.createElement("div");
-        col.classList.add("box");
-        col.textContent = "test";
-        row.appendChild(col);
-    }
-    main.appendChild(row);
+for (let i = 0; i < gridArea; i++) {
+    let gridbox = document.createElement("div");
+    gridbox.classList.add("box");
+    gridbox.textContent = i.toString();
+    main.appendChild(gridbox);
 }
 
+let box = document.querySelectorAll(".box");
+
+for (let i = 0; i < box.length; i++) {
+    box[i].style.color = "red";
+    box[i].style.height = boxSize;
+    box[i].style.width = boxSize;
+}
