@@ -10,18 +10,20 @@ header.appendChild(sizeButton);
 
 
 function makeGrid(gridSize) {
-    let box = document.querySelectorAll(".box");
-    box.forEach((box) => box.remove());
-    const gridArea = gridSize * gridSize;
-    const boxSize = (800 / gridSize).toString() + "px";
-    for (let i = 0; i < gridArea; i++) {
-        let newbox = document.createElement("div");
-        newbox.classList.add("box");
-        newbox.textContent = (i+1).toString();
-        newbox.style.height = boxSize;
-        newbox.style.width = boxSize;
-        newbox.addEventListener("mouseover", (event) => {newbox.style.backgroundColor = "green";})
-        main.appendChild(newbox);
+    if (gridSize >= 1 && gridSize <= 100) {
+        let box = document.querySelectorAll(".box");
+        box.forEach((box) => box.remove());
+        const gridArea = gridSize * gridSize;
+        const boxSize = (800 / gridSize).toString() + "px";
+        for (let i = 0; i < gridArea; i++) {
+            let newbox = document.createElement("div");
+            newbox.classList.add("box");
+            //newbox.textContent = (i+1).toString();
+            newbox.style.height = boxSize;
+            newbox.style.width = boxSize;
+            newbox.addEventListener("mouseover", (event) => {newbox.style.backgroundColor = "green";})
+            main.appendChild(newbox);
+        }
     }
 }
 
